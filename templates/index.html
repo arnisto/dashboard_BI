@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js" integrity="sha512-FJ2OYvUIXUqCcPf1stu+oTBlhn54W0UisZB/TNrZaVMHHhYvLBV9jMbvJYtvDe5x/WVaoXZ6KB+Uqe5hT2vlyA==" crossorigin="anonymous"></script>
+        <meta id="my-data" data-name="{{name}}" data-other="{{data}}">
+    </head>
+    <body>
+        
+        
+        
+        <div id="chartContainer" style="height: auto; width: 100%;"></div>
+        <script>
+           
+           // for (const item in Data) {
+            //      console.log(item);
+           // }
+            window.onload = function() {
+ 
+
+                var dataPoints = $('#my-data').data().other;
+
+                var chart = new CanvasJS.Chart("chartContainer", {       
+	animationEnabled: true,
+	title: {
+		text: "BI project // Just an example : extracting data from database after ETL using TOS // Gaidi Lamjed & Abid Mohaned"
+	},
+	axisX:{
+		minimum: 20,
+		maximum: 60
+	},
+	data: [{
+		type: "column",
+		dataPoints: dataPoints
+		
+	}]
+});
+chart.render();
+
+}
+            
+        </script>
+    </body>
+</html>
